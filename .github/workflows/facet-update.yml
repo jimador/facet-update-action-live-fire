@@ -15,7 +15,7 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: agent-facets/facet-update-action@6ce1932a008ac7783028a589f799b8951258c7df
+      - uses: actions/checkout@v7
+      - uses: agent-facets/facet-update-action@f67ed0406f8671cacbe0b17c31f74f430c6c98e9
         with:
           cli-version: '0.33.1'

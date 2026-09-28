@@ -13,5 +13,5 @@ jobs:
   fixture:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - run: ruby -rjson -e 'JSON.parse(File.read("facets.json")); JSON.parse(File.read("facets.lock"))'
