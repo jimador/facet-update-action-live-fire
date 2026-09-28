@@ -23,6 +23,11 @@ on:
         required: false
         default: true
         type: boolean
+      pr-author:
+        description: Expected pull request author for ownership scenarios
+        required: false
+        default: github-actions[bot]
+        type: string
 
 permissions:
   contents: write
@@ -46,6 +51,7 @@ jobs:
           base: ${{ inputs.base }}
           dry-run: ${{ inputs.dry-run }}
           open-pr: ${{ inputs.open-pr }}
+          pr-author: ${{ inputs.pr-author }}
       - name: Report action outputs
         if: ${{ always() && steps.update.outcome == 'success' }}
         env:
