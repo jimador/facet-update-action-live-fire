@@ -1,3 +1,4 @@
+# Human-owned branch safety fixture.
 name: Verify facet update
 
 on:
