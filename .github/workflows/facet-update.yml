@@ -2,13 +2,34 @@ name: Facet update
 
 on:
   workflow_dispatch:
+    inputs:
+      branch:
+        description: Update branch used by this scenario
+        required: false
+        default: facet-updates
+        type: string
+      base:
+        description: Base branch used by this scenario
+        required: false
+        default: main
+        type: string
+      dry-run:
+        description: Run without repository mutations
+        required: false
+        default: false
+        type: boolean
+      open-pr:
+        description: Open or refresh a pull request
+        required: false
+        default: true
+        type: boolean
 
 permissions:
   contents: write
   pull-requests: write
 
 concurrency:
-  group: facet-update-${{ github.repository }}-facet-updates
+  group: facet-update-${{ github.repository }}-${{ inputs.branch }}
   cancel-in-progress: false
 
 jobs:
@@ -16,7 +37,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: agent-facets/facet-update-action@a60b6eb02a5d154c3491c9010ad881fed26a7dda
+      - id: update
+        uses: agent-facets/facet-update-action@a60b6eb02a5d154c3491c9010ad881fed26a7dda
         with:
           adapter: codex@0.9.0
           cli-version: '0.33.1'
+          branch: ${{ inputs.branch }}
+          base: ${{ inputs.base }}
+          dry-run: ${{ inputs.dry-run }}
+          open-pr: ${{ inputs.open-pr }}
+      - name: Report action outputs
+        if: ${{ always() && steps.update.outcome == 'success' }}
+        env:
+          UPDATED: ${{ steps.update.outputs.updated }}
+          COUNT: ${{ steps.update.outputs.count }}
+          PR_URL: ${{ steps.update.outputs.pr-url }}
+        run: |
+          printf 'updated=%s\ncount=%s\npr-url=%s\n' "$UPDATED" "$COUNT" "$PR_URL"
