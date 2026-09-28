@@ -1,0 +1,17 @@
+name: Verify facet update
+
+on:
+  pull_request:
+    paths:
+      - facets.json
+      - facets.lock
+
+permissions:
+  contents: read
+
+jobs:
+  fixture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: ruby -rjson -e 'JSON.parse(File.read("facets.json")); JSON.parse(File.read("facets.lock"))'

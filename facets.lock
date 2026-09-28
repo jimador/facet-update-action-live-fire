@@ -1,0 +1,71 @@
+{
+  "lockfileVersion": 0.3,
+  "facets": {
+    "cowsay": {
+      "source": {
+        "kind": "registry",
+        "registry": "https://api.agentfacets.io"
+      },
+      "version": "1.0.0",
+      "integrity": "sha256:70fe8f9f0ba16132c70826d1cda70af9f0b4e63f3394178d2d5b4c374c833818",
+      "assets": [
+        {
+          "scope": "project",
+          "type": "skill",
+          "name": "cowsay-rules",
+          "materialization": {
+            "kind": "authored"
+          },
+          "files": [
+            {
+              "path": "skills/cowsay-rules/SKILL.md",
+              "integrity": "sha256:c298b1a1798af48f0a1b14014a40977956c346bdcd2e03468495e51a17efece6"
+            }
+          ]
+        },
+        {
+          "scope": "project",
+          "type": "agent",
+          "name": "cowsay",
+          "materialization": {
+            "kind": "authored"
+          },
+          "files": [
+            {
+              "path": "agents/cowsay.md",
+              "integrity": "sha256:77b688928f63f15cd6f1f63f0c1ebab5d4fd4d7d3562f4f21633a62250d55866"
+            }
+          ]
+        },
+        {
+          "scope": "project",
+          "type": "command",
+          "name": "cowchat",
+          "materialization": {
+            "kind": "authored"
+          },
+          "files": [
+            {
+              "path": "commands/cowchat.md",
+              "integrity": "sha256:2a4401da552087dc2f393727bfe68614365ad700b703a188f8e86e33fec01547"
+            }
+          ]
+        },
+        {
+          "scope": "project",
+          "type": "command",
+          "name": "cowsay",
+          "materialization": {
+            "kind": "authored"
+          },
+          "files": [
+            {
+              "path": "commands/cowsay.md",
+              "integrity": "sha256:783d5ecd7648581906ad34a187c4137a450430cf0c37877b3b4da3b3443a891e"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

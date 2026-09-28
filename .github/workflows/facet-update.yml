@@ -1,0 +1,21 @@
+name: Facet update
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: facet-update-${{ github.repository }}-facet-updates
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: agent-facets/facet-update-action@6ce1932a008ac7783028a589f799b8951258c7df
+        with:
+          cli-version: '0.33.1'
