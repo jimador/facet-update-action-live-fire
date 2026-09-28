@@ -16,6 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: agent-facets/facet-update-action@f67ed0406f8671cacbe0b17c31f74f430c6c98e9
+      - uses: agent-facets/facet-update-action@a60b6eb02a5d154c3491c9010ad881fed26a7dda
         with:
+          adapter: codex@0.9.0
           cli-version: '0.33.1'
