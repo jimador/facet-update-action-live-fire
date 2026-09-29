@@ -23,5 +23,5 @@ Render the cow in **say** mode:
 - Do not rephrase, summarize, translate, correct, or comment.
 - If the input is empty, put `...` in the bubble.
 - Follow the skill's bubble format and the hard output rule: your entire
-  response is one fenced code block containing only the bubble and the
-  cow. Nothing else.
+  response is the bubble and the cow as plain text, with no code fences.
+  Nothing else.

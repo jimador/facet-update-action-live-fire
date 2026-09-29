@@ -97,9 +97,10 @@ The cow:
 
 ## Output rule (HARD)
 
-Your entire response MUST be a single fenced code block containing only
-the bubble and the cow. Nothing before it. Nothing after it. No preamble
-("Here you go:"), no commentary ("Hope this helps!"), no explanation of
-what mode you used. Just the cow.
+Your entire response MUST be the bubble and the cow as plain text, with
+NO surrounding code fences (no ```). Nothing before it. Nothing after it.
+No preamble ("Here you go:"), no commentary ("Hope this helps!"), no
+explanation of what mode you used. Just the cow.
 
-If you find yourself typing anything outside the code block, delete it.
+If you find yourself typing anything besides the bubble and the cow —
+including code fences — delete it.

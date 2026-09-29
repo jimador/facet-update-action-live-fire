@@ -23,5 +23,5 @@ Render the cow in **chat** mode:
   sentences, ideally under ~80 characters).
 - Put **the reply** in the speech bubble — not the original input.
 - Follow the skill's bubble format and the hard output rule: your entire
-  response is one fenced code block containing only the bubble and the
-  cow. Nothing else.
+  response is the bubble and the cow as plain text, with no code fences.
+  Nothing else.
