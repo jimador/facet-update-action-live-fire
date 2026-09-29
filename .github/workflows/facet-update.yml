@@ -43,7 +43,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - id: update
-        uses: agent-facets/facet-update-action@a60b6eb02a5d154c3491c9010ad881fed26a7dda
+        uses: agent-facets/facet-update-action@v1
         with:
           adapter: codex@0.9.0
           cli-version: '0.33.1'
